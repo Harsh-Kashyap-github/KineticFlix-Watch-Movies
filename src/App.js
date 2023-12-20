@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import NavBar from './components/nav-bar/nav-bar.component';
+import Home from './rotute/home/home';
+import CategoryPage from './rotute/category/category';
+import Search from './rotute/search/search';
+import Fav from './rotute/fav/fav';
+import Authentication from './rotute/authentication/authentication';
+import Player from './rotute/player/player';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<NavBar/>}>
+        <Route index={true} element={<Home/>}/>
+        <Route path=":category" element={<CategoryPage/>}/>
+        <Route path="search" element={<Search/>}/>
+        <Route path="favourites" element={<Fav/>}/>
+        <Route path="auth" element={<Authentication/>}/>
+        <Route path="movie/:id" element={<Player/>}/>
+      </Route>
+    </Routes>
   );
 }
 

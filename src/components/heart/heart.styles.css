@@ -1,0 +1,12 @@
+.heart-container {
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 24px; /* Adjust the font size to make the heart bigger */
+    border: 1px solid #ccc; /* Add a border to the heart */
+    padding: 8px; /* Add padding for better spacing */
+    border-radius: 50%; /* Make the container a circle */
+  }
+  
+  .heart-container.favorited {
+    color: red; /* Change the color when favorited */
+  }
