@@ -7,8 +7,10 @@ import FormInput from "../form-input/form-input.component";
 
 import { signInWithGooglePopup,
     } from "../../utils/firebase/firebase.util";
+import { useNavigate } from 'react-router-dom';
 
 const SignInForm=() =>{
+    const nav=useNavigate();
     // console.log("SignInForm Function Runs");
     // useEffect(()=>{
     //     console.log("SihnInForm UseEffect Runs")
@@ -42,6 +44,7 @@ const SignInForm=() =>{
         console.log(response);
         setFormFields(defaultFormField);
         alert("Succesfully Signed In")
+        nav("/")
         
        }catch(error){
         if(error.code==="auth/invalid-credential")
@@ -64,7 +67,8 @@ const SignInForm=() =>{
         // console.log(user,userDocRef);
         // setCurrentUser(user);
         alert("Succesfully Signed In")
-        console.log(user);
+        nav("/")
+        // console.log(user);
         // console.log("You SignedIn Using Google");
     };
 

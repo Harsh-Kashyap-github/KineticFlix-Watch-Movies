@@ -4,9 +4,11 @@ import { creatUserDocumentFromAuth } from "../../utils/firebase/firebase.util";
 import { createAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.util";
 import "../sign-up-form/sign-up-form.styles.scss"
 import FormInput from "../form-input/form-input.component";
+import { useNavigate } from "react-router-dom";
 // import { UserContext } from "../../contexts/user.context";
 // import { useContext } from "react";
 const SignUpForm=()=>{
+    const nav=useNavigate();
     const defaultFormField={
         displayName:'',
         email:'',
@@ -38,6 +40,7 @@ const SignUpForm=()=>{
         setFormFields(defaultFormField);
         // setCurrentUser(user);
         alert("User signUp Succesful");
+        nav("/")
         
         
        }catch(error){

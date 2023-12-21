@@ -7,14 +7,13 @@ import { CreateFavsFromAuth, SignOutUser, UpdateFavsAtServer, getDisplayName, si
 import { FavContext } from "../../context/fav-movies/fav-movies.context";
 import { UserContext } from "../../context/user/user.context";
 import UserNavItem from "../user-nav-item/user-nav.item.component";
-import {} from "../../assets/photo/poster.png"
 
 
 const NavBar = () => {
   const {favs,setFavs}=useContext(FavContext)
   const {currentUser}=useContext(UserContext)
   const [displayName,setdisplayName]=useState("Unknown")
-  const [photo,setPhoto]=useState("https://genslerzudansdentistry.com/wp-content/uploads/2015/11/anonymous-user.png")
+  const [photo,setPhoto]=useState("../../assets/photo/auth.jpeg")
 const getFavsFromServer=async ()=>{
     let favsAtserver=await CreateFavsFromAuth(currentUser,favs)
     if(favsAtserver)
